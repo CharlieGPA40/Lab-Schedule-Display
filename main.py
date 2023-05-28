@@ -140,11 +140,52 @@ def create_schedule_app():
         line2_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='white', fg="#616a6b",
                                         bd=0, relief="raised", command=lambda: camera_status_off())
         line2_unlock_button.place(relx=0.927, rely=0.5620, anchor="center")
-        line1_unlock_button.place(relx=0.927, rely=0.412, anchor="center")
         status_layer_camera = tk.Frame(window, bg='#C0392B', bd=0)
         status_layer_camera.place(relx=0.63, rely=0.5495, relwidth=0.006, relheight=0.0228)
-    
 
+    def exp_status_on():
+        line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='white', fg="#616a6b",
+                                      bd=0,
+                                      relief="raised", command=lambda: exp_status_on())
+        line3_lock_button.place(relx=0.853, rely=0.7120, anchor="center")
+        line3_unlock_button = tk.Button(window, text="Idle", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9",
+                                        bd=0,
+                                        relief="raised", command=lambda: exp_status_off())
+        line3_unlock_button.place(relx=0.9275, rely=0.7120, anchor="center")
+        status_layer_experiment = tk.Frame(window, bg='#52BE80', bd=0)
+        status_layer_experiment.place(relx=0.63, rely=0.6995, relwidth=0.006, relheight=0.0228)
+
+    def exp_status_off():
+        line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9",
+                                      bd=0, relief="raised", command=lambda: exp_status_on())
+        line3_lock_button.place(relx=0.853, rely=0.7120, anchor="center")
+        line3_unlock_button = tk.Button(window, text="Idle", font=("Helvetica Neue", 18), bg='white', fg="#616a6b",
+                                        bd=0, relief="raised", command=lambda: exp_status_off())
+        line3_unlock_button.place(relx=0.9275, rely=0.7120, anchor="center")
+        status_layer_experiment = tk.Frame(window, bg='#C0392B', bd=0)
+        status_layer_experiment.place(relx=0.63, rely=0.6995, relwidth=0.006, relheight=0.0228)
+
+    def cryo_status_on():
+        line4_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='white', fg="#616a6b", bd=0,
+                                      relief="raised", command=lambda: cryo_status_on())
+        line4_lock_button.place(relx=0.85, rely=0.8620, anchor="center")
+        line4_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9",
+                                        bd=0,
+                                        relief="raised", command=lambda: cryo_status_off())
+        line4_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
+        status_layer_cryo = tk.Frame(window, bg='#52BE80', bd=0)
+        status_layer_cryo.place(relx=0.63, rely=0.8495, relwidth=0.006, relheight=0.0228)
+
+    def cryo_status_off():
+        line4_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
+                                      relief="raised", command=lambda: cryo_status_on())
+        line4_lock_button.place(relx=0.85, rely=0.8620, anchor="center")
+        line4_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='white', fg="#616a6b",
+                                        bd=0,
+                                        relief="raised", command=lambda: cryo_status_off())
+        line4_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
+        status_layer_cryo = tk.Frame(window, bg='#C0392B', bd=0)
+        status_layer_cryo.place(relx=0.63, rely=0.8495, relwidth=0.006, relheight=0.0228)
 
     line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
                                   relief="raised",command=lambda: laser_status_on())
@@ -153,6 +194,7 @@ def create_schedule_app():
                                     relief="raised",command=lambda: laser_status_off())
     line1_unlock_button.place(relx=0.927, rely=0.412, anchor="center")
 
+
     line2_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
                                   relief="raised",command=lambda: camera_status_on())
     line2_lock_button.place(relx=0.85, rely=0.5620, anchor="center")
@@ -160,15 +202,21 @@ def create_schedule_app():
                                     relief="raised",command=lambda: camera_status_off())
     line2_unlock_button.place(relx=0.927, rely=0.5620, anchor="center")
 
-    line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
+
+    line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
+                                  relief="raised",command=lambda: exp_status_on())
     line3_lock_button.place(relx=0.853, rely=0.7120, anchor="center")
-    line3_unlock_button = tk.Button(window, text="Idle", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
+    line3_unlock_button = tk.Button(window, text="Idle", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
+                                    relief="raised",command=lambda: exp_status_off())
     line3_unlock_button.place(relx=0.9275, rely=0.7120, anchor="center")
 
-    line3_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
-    line3_lock_button.place(relx=0.85, rely=0.8620, anchor="center")
-    line3_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
-    line3_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
+
+    line4_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
+                                  relief="raised",command=lambda: cryo_status_on())
+    line4_lock_button.place(relx=0.85, rely=0.8620, anchor="center")
+    line4_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
+                                    relief="raised",command=lambda: cryo_status_off())
+    line4_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
     # Run the application
 
     # status_layer_1 = tk.Frame(window, bg='#C0392B', bd=0)
