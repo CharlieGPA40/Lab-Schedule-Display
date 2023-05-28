@@ -1,2 +1,2 @@
 # Lab-Schedule-Display
- Lan Status Displau
+ Lan Status Display
