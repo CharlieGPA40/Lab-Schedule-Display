@@ -224,7 +224,7 @@ def create_schedule_app():
 
     icon = Image.open("lock_Resized.png")
     photo = ImageTk.PhotoImage(icon)
-    lock_button = tk.Button(window, text="Off", image = photo, command=lambda: cryo_status_off(),bg='#283747')
+    lock_button = tk.Button(window, text="Off", image = photo, command=lambda: cryo_status_off(),bg='#283747',relief="flat",bd=0)
     lock_button.place(relx=0.98, rely=0.98, anchor="center")
     # Run the application
 
