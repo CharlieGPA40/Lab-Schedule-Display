@@ -21,7 +21,7 @@ def create_schedule_app():
     # green_layer.place(x=0, y=0, relwidth=1, relheight=1)
 
     image = Image.open('Gradient.jpg')
-    resize_image = image.resize((screen_width, screen_height), Image.LANCZOS)
+    resize_image = image.resize((1368, 912), Image.LANCZOS)
     resize_image.save('Gradient_Resized.png')
 
     # Set the background image with opacity
