@@ -217,6 +217,15 @@ def create_schedule_app():
     line4_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
                                     relief="raised",command=lambda: cryo_status_off())
     line4_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
+
+    icon = Image.open("lock.png")
+    resize_icon_unlock = icon.resize((30, 30), Image.LANCZOS)
+    resize_icon_unlock.save('lock_Resized.png')
+
+    icon = Image.open("lock_Resized.png")
+    photo = ImageTk.PhotoImage(icon)
+    lock_button = tk.Button(window, text="Off", image = photo, command=lambda: cryo_status_off(),bg='#283747')
+    lock_button.place(relx=0.98, rely=0.98, anchor="center")
     # Run the application
 
     # status_layer_1 = tk.Frame(window, bg='#C0392B', bd=0)
