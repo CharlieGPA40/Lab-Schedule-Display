@@ -115,14 +115,14 @@ def create_schedule_app():
     line2_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line2_unlock_button.place(relx=0.927, rely=0.5620, anchor="center")
 
-    line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line3_lock_button.place(relx=0.853, rely=0.7120, anchor="center")
-    line3_unlock_button = tk.Button(window, text="Idle", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line3_unlock_button = tk.Button(window, text="Idle", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line3_unlock_button.place(relx=0.9275, rely=0.7120, anchor="center")
 
-    line3_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line3_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line3_lock_button.place(relx=0.85, rely=0.8620, anchor="center")
-    line3_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line3_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line3_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
     # Run the application
 
