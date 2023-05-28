@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-import sv_ttk
 from PIL import Image, ImageTk
 from datetime import datetime
 
@@ -9,12 +8,13 @@ from datetime import datetime
 def create_schedule_app():
     # Create the main window
     window = tk.Tk()
+    # window.attributes('-fullscreen', True)
     window.title("Lab Status")
 
     # Get the screen width and height
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
-
+    print(screen_height, screen_width)
     # Set the window size to fit the screen
     window.geometry(f"{screen_width}x{screen_height}")
 
@@ -57,11 +57,17 @@ def create_schedule_app():
         window.after(1000, update_time)  # Update every 1000 milliseconds (1 second)
 
 
-    time_label = tk.Label(window, text="", font=("Helvetica Neue", 100), bg='#283747', fg='white')
+    # time_label = tk.Label(window, text="", font=("Helvetica Neue", 100), bg='#283747', fg='white')
+    # time_label.place(relx=0.71, rely=0.1)
+    time_label = tk.Label(window, text="", font=("Helvetica Neue", 50), bg='#283747', fg='white')
     time_label.place(relx=0.71, rely=0.1)
-    time_label_24hr = tk.Label(window, text="", font=("Helvetica Neue", 50), bg='#283747', fg='white')
+    # time_label_24hr = tk.Label(window, text="", font=("Helvetica Neue", 50), bg='#283747', fg='white')
+    # time_label_24hr.place(relx=0.865, rely=0.146)
+    time_label_24hr = tk.Label(window, text="", font=("Helvetica Neue", 25), bg='#283747', fg='white')
     time_label_24hr.place(relx=0.865, rely=0.146)
-    Date_label = tk.Label(window, text="", font=("Helvetica Neue", 32), bg='#283747', fg='white')
+    # Date_label = tk.Label(window, text="", font=("Helvetica Neue", 32), bg='#283747', fg='white')
+    # Date_label.place(relx=0.714, rely=0.22)
+    Date_label = tk.Label(window, text="", font=("Helvetica Neue", 18), bg='#283747', fg='white')
     Date_label.place(relx=0.714, rely=0.22)
     update_time()
     # Green color layer on top of the image
@@ -113,7 +119,7 @@ def create_schedule_app():
     # status_layer_1 = tk.Frame(window, bg='#C0392B', bd=0)
     # status_layer_1.place(relx=0, rely=0.955, relwidth=0.6, relheight=0.045)
 
-    sv_ttk.set_theme("light")
+
     window.mainloop()
 
 
