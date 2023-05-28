@@ -224,7 +224,7 @@ def create_schedule_app():
 
     icon = Image.open("lock_Resized.png")
     photo = ImageTk.PhotoImage(icon)
-    lock_button = tk.Button(window, text="Off", image = photo, command=lambda: lock_btn(),bg='#283747',relief="flat",bd=0)
+    lock_button = tk.Button(window, text="lock", image = photo, command=lambda: lock_btn(),bg='#283747',relief="flat",bd=0)
     lock_button.place(relx=0.98, rely=0.98, anchor="center")
 
     def lock_btn():
@@ -241,12 +241,10 @@ def create_schedule_app():
         icon = Image.open("unlock.png")
         resize_icon_unlock = icon.resize((30, 30), Image.LANCZOS)
         resize_icon_unlock.save('unlock_Resized.png')
-
-        icon = Image.open("unlock_Resized.png")
-        photo = ImageTk.PhotoImage(icon)
-        lock_button = tk.Button(window, text="lock", image=photo, command=lambda: unlock_btn(), bg='#283747',
-                                relief="flat", bd=0)
-        lock_button.place(relx=0.98, rely=0.98, anchor="center")
+        unlock_icon = Image.open("unlock_Resized.png")
+        unlock_icon = ImageTk.PhotoImage(unlock_icon)
+        lock_button = tk.Button(window, text="unlock", image=unlock_icon,command=lambda: unlock_btn(), bg='#283747', bd=0)
+        lock_button.place(relx=0.9, rely=0.98, anchor="center")
 
     def unlock_btn():
         line1_lock_button['state'] = tk.NORMAL
@@ -265,7 +263,7 @@ def create_schedule_app():
 
         icon = Image.open("lock_Resized.png")
         lock_photo = ImageTk.PhotoImage(icon)
-        lock_button = tk.Button(window, text="unlock", image=lock_photo, command=lambda: unlock_btn(), bg='#283747',
+        lock_button = tk.Button(window, text="lock", image=lock_photo, command=lambda: lock_btn(), bg='#283747',
                                 relief="flat", bd=0)
         lock_button.place(relx=0.98, rely=0.98, anchor="center")
     # Run the application
@@ -280,4 +278,6 @@ def create_schedule_app():
 
 
 # Run the conference room schedule app
-create_schedule_app()
+if __name__ == '__main__':
+    # construct the main wi
+    window1 = create_schedule_app()
