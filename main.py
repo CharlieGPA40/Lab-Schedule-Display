@@ -244,28 +244,28 @@ def create_schedule_app():
 
         icon = Image.open("unlock_Resized.png")
         photo = ImageTk.PhotoImage(icon)
-        lock_button = tk.Button(window, text="Off", image=photo, command=lambda: unlock_btn(), bg='#283747',
+        lock_button = tk.Button(window, text="lock", image=photo, command=lambda: unlock_btn(), bg='#283747',
                                 relief="flat", bd=0)
         lock_button.place(relx=0.98, rely=0.98, anchor="center")
 
     def unlock_btn():
-        line1_lock_button['state'] = tk.tk.NORMAL
-        line2_lock_button['state'] = tk.tk.NORMAL
-        line3_lock_button['state'] = tk.tk.NORMAL
-        line4_lock_button['state'] = tk.tk.NORMAL
+        line1_lock_button['state'] = tk.NORMAL
+        line2_lock_button['state'] = tk.NORMAL
+        line3_lock_button['state'] = tk.NORMAL
+        line4_lock_button['state'] = tk.NORMAL
 
-        line1_unlock_button['state'] = tk.tk.NORMAL
-        line2_unlock_button['state'] = tk.tk.NORMAL
-        line3_unlock_button['state'] = tk.tk.NORMAL
-        line4_unlock_button['state'] = tk.tk.NORMAL
+        line1_unlock_button['state'] = tk.NORMAL
+        line2_unlock_button['state'] = tk.NORMAL
+        line3_unlock_button['state'] = tk.NORMAL
+        line4_unlock_button['state'] = tk.NORMAL
 
         icon = Image.open("lock.png")
         resize_icon_unlock = icon.resize((30, 30), Image.LANCZOS)
         resize_icon_unlock.save('lock_Resized.png')
 
         icon = Image.open("lock_Resized.png")
-        photo = ImageTk.PhotoImage(icon)
-        lock_button = tk.Button(window, text="Off", image=photo, command=lambda: unlock_btn(), bg='#283747',
+        lock_photo = ImageTk.PhotoImage(icon)
+        lock_button = tk.Button(window, text="unlock", image=lock_photo, command=lambda: unlock_btn(), bg='#283747',
                                 relief="flat", bd=0)
         lock_button.place(relx=0.98, rely=0.98, anchor="center")
     # Run the application
