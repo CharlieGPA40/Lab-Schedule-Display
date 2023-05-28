@@ -8,13 +8,12 @@ from datetime import datetime
 def create_schedule_app():
     # Create the main window
     window = tk.Tk()
-    window.attributes('-fullscreen', True)
+    # window.attributes('-fullscreen', True)
     window.title("Lab Status")
 
     # Get the screen width and height
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
-    print(screen_height, screen_width)
     # Set the window size to fit the screen
     window.geometry(f"{1368}x{912}")
 
@@ -103,14 +102,17 @@ def create_schedule_app():
     status_layer_experiment = tk.Frame(window, bg='#C0392B', bd=0)
     status_layer_experiment.place(relx=0.63, rely=0.8495, relwidth=0.006, relheight=0.0228)
 
-    line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+
+
+
+    line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line1_lock_button.place(relx=0.85, rely=0.412, anchor="center")
-    line1_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line1_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line1_unlock_button.place(relx=0.927, rely=0.412, anchor="center")
 
-    line2_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line2_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line2_lock_button.place(relx=0.85, rely=0.5620, anchor="center")
-    line2_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
+    line2_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line2_unlock_button.place(relx=0.927, rely=0.5620, anchor="center")
 
     line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0)
