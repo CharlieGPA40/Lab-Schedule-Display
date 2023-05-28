@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import *
 from PIL import Image, ImageTk
 from datetime import datetime
 
@@ -78,11 +78,21 @@ def create_schedule_app():
     # outer_ring.place(relx=0.5, rely=0.5, anchor="center", relwidth=0.8, relheight=0.8)
 
     # Schedule lines
-    lab_label = tk.Label(window, text="UNO", font=("Helvetica Neue", 40), bg='#283747', fg="#ABB2B9")
-    lab_label.place(relx=0.1, rely=0.2, anchor="center")
+    lab_label = tk.Label(window, text="Ultrafast Nonlinear Optics Lab", font=("Helvetica Neue", 20), bg='#283747', fg="white")
+    lab_label.place(relx=0.117, rely=0.2, anchor="center")
 
+    Room_label = tk.Label(window, text="Leach Laboratory \nRoom 0182           ", font=("Helvetica Neue", 60), bg='#283747', fg='white')
+    Room_label.place(relx=0.2, rely=0.35, anchor="center")
 
-    line1_label = tk.Label(window, text="Laser Status", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9")
+    Available_label = tk.Label(window, text="Available", font=("Helvetica Neue", 80),
+                          bg='#283747', fg='white')
+    Available_label.place(relx=0.14, rely=0.6, anchor="center")
+
+    # Adding transparent background property
+    window.wm_attributes('-transparentcolor', 'red')
+
+    # Create a Label
+    line1_label = tk.Label(window, text="Laser Status", font=("Helvetica Neue", 18), bg='#ab23ff', fg="#ABB2B9")
     line1_label.place(relx=0.64, rely=0.43, anchor="sw")
     status_layer_laser = tk.Frame(window, bg='#C0392B', bd=0)
     status_layer_laser.place(relx=0.63, rely=0.3995, relwidth=0.006, relheight=0.0228)
