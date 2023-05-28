@@ -16,7 +16,7 @@ def create_schedule_app():
     screen_height = window.winfo_screenheight()
     print(screen_height, screen_width)
     # Set the window size to fit the screen
-    window.geometry(f"{screen_width}x{screen_height}")
+    window.geometry(f"{1368}x{912}")
 
     # green_layer = tk.Frame(window, bg='#75A85E', bd=0)
     # green_layer.place(x=0, y=0, relwidth=1, relheight=1)
