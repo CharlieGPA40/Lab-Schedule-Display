@@ -102,10 +102,15 @@ def create_schedule_app():
     status_layer_experiment = tk.Frame(window, bg='#C0392B', bd=0)
     status_layer_experiment.place(relx=0.63, rely=0.8495, relwidth=0.006, relheight=0.0228)
 
+    def laser_status_on():
+        line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#A2D9CE', fg="#ABB2B9", bd=0,
+                                      relief="raised", command=lambda: laser_status_on())
+        line1_lock_button.place(relx=0.85, rely=0.412, anchor="center")
 
 
 
-    line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
+    line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
+                                  relief="raised",command=lambda: laser_status_on())
     line1_lock_button.place(relx=0.85, rely=0.412, anchor="center")
     line1_unlock_button = tk.Button(window, text="Off", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0, relief="raised")
     line1_unlock_button.place(relx=0.927, rely=0.412, anchor="center")
