@@ -8,7 +8,7 @@ from datetime import datetime
 def create_schedule_app():
     # Create the main window
     window = tk.Tk()
-    # window.attributes('-fullscreen', True)
+    window.attributes('-fullscreen', True)
     window.title("Lab Status")
 
     # Get the screen width and height
@@ -76,23 +76,24 @@ def create_schedule_app():
     # Outer green ring
     # outer_ring = tk.Label(window, text="", bg="green", fg="white", font=("Arial", 50), bd=0)
     # outer_ring.place(relx=0.5, rely=0.5, anchor="center", relwidth=0.8, relheight=0.8)
+    window.wm_attributes('-transparentcolor', 'red')
 
     # Schedule lines
-    lab_label = tk.Label(window, text="Ultrafast Nonlinear Optics Lab", font=("Helvetica Neue", 20), bg='#283747', fg="white")
+    lab_label = tk.Label(window, text="Ultrafast Nonlinear Optics Lab", font=("Helvetica Neue", 15), bg='#283747', fg="white")
     lab_label.place(relx=0.117, rely=0.2, anchor="center")
 
-    Room_label = tk.Label(window, text="Leach Laboratory \nRoom 0182           ", font=("Helvetica Neue", 60), bg='#283747', fg='white')
+    Room_label = tk.Label(window, text="Leach Laboratory \nRoom 0182           ", font=("Helvetica Neue", 30), bg='#283747', fg='white')
     Room_label.place(relx=0.2, rely=0.35, anchor="center")
 
-    Available_label = tk.Label(window, text="Available", font=("Helvetica Neue", 80),
+    Available_label = tk.Label(window, text="Available", font=("Helvetica Neue", 40),
                           bg='#283747', fg='white')
     Available_label.place(relx=0.14, rely=0.6, anchor="center")
 
     # Adding transparent background property
-    window.wm_attributes('-transparentcolor', 'red')
+
 
     # Create a Label
-    line1_label = tk.Label(window, text="Laser Status", font=("Helvetica Neue", 18), bg='#ab23ff', fg="#ABB2B9")
+    line1_label = tk.Label(window, text="Laser Status", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9")
     line1_label.place(relx=0.64, rely=0.43, anchor="sw")
     status_layer_laser = tk.Frame(window, bg='#C0392B', bd=0)
     status_layer_laser.place(relx=0.63, rely=0.3995, relwidth=0.006, relheight=0.0228)
