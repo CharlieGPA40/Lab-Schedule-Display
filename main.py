@@ -227,6 +227,14 @@ def create_schedule_app():
     lock_button = tk.Button(window, text="lock", image = photo, command=lambda: lock_btn(),bg='#283747',relief="flat",bd=0)
     lock_button.place(relx=0.98, rely=0.98, anchor="center")
 
+    icon = Image.open("unlock.png")
+    resize_icon_unlock = icon.resize((30, 30), Image.LANCZOS)
+    resize_icon_unlock.save('unlock_Resized.png')
+    unlock_icon = Image.open("unlock_Resized.png")
+    unlock_icon = ImageTk.PhotoImage(unlock_icon)
+    lock_button = tk.Button(window, text="unlock", image=unlock_icon, command=lambda: unlock_btn(), bg='#283747', bd=0)
+    lock_button.place(relx=0.95, rely=0.98, anchor="center")
+
     def lock_btn():
         line1_lock_button['state'] = tk.DISABLED
         line2_lock_button['state'] = tk.DISABLED
@@ -238,13 +246,7 @@ def create_schedule_app():
         line3_unlock_button['state'] = tk.DISABLED
         line4_unlock_button['state'] = tk.DISABLED
 
-        icon = Image.open("unlock.png")
-        resize_icon_unlock = icon.resize((30, 30), Image.LANCZOS)
-        resize_icon_unlock.save('unlock_Resized.png')
-        unlock_icon = Image.open("unlock_Resized.png")
-        unlock_icon = ImageTk.PhotoImage(unlock_icon)
-        lock_button = tk.Button(window, text="unlock", image=unlock_icon,command=lambda: unlock_btn(), bg='#283747', bd=0)
-        lock_button.place(relx=0.9, rely=0.98, anchor="center")
+
 
     def unlock_btn():
         line1_lock_button['state'] = tk.NORMAL
@@ -256,16 +258,6 @@ def create_schedule_app():
         line2_unlock_button['state'] = tk.NORMAL
         line3_unlock_button['state'] = tk.NORMAL
         line4_unlock_button['state'] = tk.NORMAL
-
-        icon = Image.open("lock.png")
-        resize_icon_unlock = icon.resize((30, 30), Image.LANCZOS)
-        resize_icon_unlock.save('lock_Resized.png')
-
-        icon = Image.open("lock_Resized.png")
-        lock_photo = ImageTk.PhotoImage(icon)
-        lock_button = tk.Button(window, text="lock", image=lock_photo, command=lambda: lock_btn(), bg='#283747',
-                                relief="flat", bd=0)
-        lock_button.place(relx=0.98, rely=0.98, anchor="center")
     # Run the application
 
     # status_layer_1 = tk.Frame(window, bg='#C0392B', bd=0)
