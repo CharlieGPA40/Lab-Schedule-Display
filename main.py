@@ -7,15 +7,7 @@ from datetime import datetime
 
 def create_schedule_app():
     # Create the main window
-    window = tk.Tk()
-    window.attributes('-fullscreen', True)
-    window.title("Lab Status")
 
-    # Get the screen width and height
-    screen_width = window.winfo_screenwidth()
-    screen_height = window.winfo_screenheight()
-    # Set the window size to fit the screen
-    window.geometry(f"{1368}x{912}")
 
     # green_layer = tk.Frame(window, bg='#75A85E', bd=0)
     # green_layer.place(x=0, y=0, relwidth=1, relheight=1)
@@ -76,7 +68,7 @@ def create_schedule_app():
     # Outer green ring
     # outer_ring = tk.Label(window, text="", bg="green", fg="white", font=("Arial", 50), bd=0)
     # outer_ring.place(relx=0.5, rely=0.5, anchor="center", relwidth=0.8, relheight=0.8)
-    window.wm_attributes('-transparentcolor', 'red')
+    # window.wm_attributes('-transparentcolor', 'red')
 
     # Schedule lines
     lab_label = tk.Label(window, text="Ultrafast Nonlinear Optics Lab", font=("Helvetica Neue", 15), bg='#283747', fg="white")
@@ -85,9 +77,9 @@ def create_schedule_app():
     Room_label = tk.Label(window, text="Leach Laboratory \nRoom 0182           ", font=("Helvetica Neue", 30), bg='#283747', fg='white')
     Room_label.place(relx=0.2, rely=0.35, anchor="center")
 
-    Available_label = tk.Label(window, text="Available", font=("Helvetica Neue", 40),
+    Available_label = tk.Label(window, text="AVAILABLE", font=("Helvetica Neue", 80),
                           bg='#283747', fg='white')
-    Available_label.place(relx=0.14, rely=0.6, anchor="center")
+    Available_label.place(relx=0.2, rely=0.8, anchor="center")
 
     # Adding transparent background property
 
@@ -122,6 +114,9 @@ def create_schedule_app():
         line1_lock_button.place(relx=0.85, rely=0.412, anchor="center")
         status_layer_laser = tk.Frame(window, bg='#52BE80', bd=0)
         status_layer_laser.place(relx=0.63, rely=0.3995, relwidth=0.006, relheight=0.0228)
+        Available_label = tk.Label(window, text="IN USE", font=("Helvetica Neue", 80),
+                                   bg='#283747', fg='white')
+        Available_label.place(relx=0.2, rely=0.8, anchor="center")
 
     def laser_status_off():
         line1_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
@@ -143,6 +138,9 @@ def create_schedule_app():
         line2_unlock_button.place(relx=0.927, rely=0.5620, anchor="center")
         status_layer_camera = tk.Frame(window, bg='#52BE80', bd=0)
         status_layer_camera.place(relx=0.63, rely=0.5495, relwidth=0.006, relheight=0.0228)
+        Available_label = tk.Label(window, text="IN USE", font=("Helvetica Neue", 80),
+                                   bg='#283747', fg='white')
+        Available_label.place(relx=0.2, rely=0.8, anchor="center")
 
     def camera_status_off():
         line2_lock_button = tk.Button(window, text="On", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
@@ -165,6 +163,9 @@ def create_schedule_app():
         line3_unlock_button.place(relx=0.9275, rely=0.7120, anchor="center")
         status_layer_experiment = tk.Frame(window, bg='#52BE80', bd=0)
         status_layer_experiment.place(relx=0.63, rely=0.6995, relwidth=0.006, relheight=0.0228)
+        Available_label = tk.Label(window, text="IN USE", font=("Helvetica Neue", 80),
+                                   bg='#283747', fg='white')
+        Available_label.place(relx=0.2, rely=0.8, anchor="center")
 
     def exp_status_off():
         line3_lock_button = tk.Button(window, text="Running", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9",
@@ -186,6 +187,9 @@ def create_schedule_app():
         line4_unlock_button.place(relx=0.927, rely=0.8620, anchor="center")
         status_layer_cryo = tk.Frame(window, bg='#52BE80', bd=0)
         status_layer_cryo.place(relx=0.63, rely=0.8495, relwidth=0.006, relheight=0.0228)
+        Available_label = tk.Label(window, text="IN USE", font=("Helvetica Neue", 80),
+                                   bg='#283747', fg='white')
+        Available_label.place(relx=0.2, rely=0.8, anchor="center")
 
     def cryo_status_off():
         line4_lock_button = tk.Button(window, text="Vac", font=("Helvetica Neue", 18), bg='#283747', fg="#ABB2B9", bd=0,
@@ -283,4 +287,13 @@ def create_schedule_app():
 # Run the conference room schedule app
 if __name__ == '__main__':
     # construct the main wi
+    window = tk.Tk()
+    # window.attributes('-fullscreen', True)
+    window.title("Lab Status")
+
+    # Get the screen width and height
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
+    # Set the window size to fit the screen
+    window.geometry(f"{1368}x{912}")
     window1 = create_schedule_app()
