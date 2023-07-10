@@ -71,15 +71,15 @@ def create_schedule_app():
     # window.wm_attributes('-transparentcolor', 'red')
 
     # Schedule lines
-    lab_label = tk.Label(window, text="Ultrafast Nonlinear Optics Lab", font=("Helvetica Neue", 15), bg='#283747', fg="white")
-    lab_label.place(relx=0.117, rely=0.2, anchor="center")
-
-    Room_label = tk.Label(window, text="Leach Laboratory \nRoom 0182           ", font=("Helvetica Neue", 30), bg='#283747', fg='white')
-    Room_label.place(relx=0.2, rely=0.35, anchor="center")
-
-    Available_label = tk.Label(window, text="AVAILABLE", font=("Helvetica Neue", 80),
-                          bg='#283747', fg='white')
-    Available_label.place(relx=0.2, rely=0.8, anchor="center")
+    # lab_label = tk.Label(window, text="Ultrafast Nonlinear Optics Lab", font=("Helvetica Neue", 15), bg='#283747', fg="white")
+    # lab_label.place(relx=0.117, rely=0.2, anchor="center")
+    #
+    # Room_label = tk.Label(window, text="Leach Laboratory \nRoom 0182           ", font=("Helvetica Neue", 30), bg='#283747', fg='white')
+    # Room_label.place(relx=0.2, rely=0.35, anchor="center")
+    #
+    # Available_label = tk.Label(window, text="AVAILABLE", font=("Helvetica Neue", 80),
+    #                       bg='#283747', fg='white')
+    # Available_label.place(relx=0.2, rely=0.8, anchor="center")
 
     # Adding transparent background property
 
